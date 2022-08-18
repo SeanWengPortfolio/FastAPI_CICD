@@ -94,7 +94,7 @@ jobs:
           password: ${{secrets.PROD_PASSWORD}}
           script: |
             cd app/src
-            git pull
+            git pull --ff-only
             echo ${{secrets.PROD_PASSWORD}} | sudo -S systemctl restart fasapi-cicd.service 
       # login to our ubuntu
       # cd /app/src
